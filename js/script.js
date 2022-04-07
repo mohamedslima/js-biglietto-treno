@@ -1,7 +1,7 @@
 
-// DATI IN POsSESSO
+// DATI IN POSSESSO
 
-let price = 0.21 
+let price = 0.21;
 
 // ELABORO DATI UTENTE
 
@@ -11,9 +11,19 @@ console.log(distanceKm, yourAge);
 
 // Calcolo distanza km
 
-const userPrice = price * distanceKm;
+let userPrice = price * distanceKm;
+
+
+// Sconti
+
+if (yourAge < 18) {
+    userPrice = userPrice - (userPrice * 20 / 100);
+} else if (yourAge > 64) {
+    userPrice = userPrice - (userPrice * 40 / 100);
+}
+
 console.log(userPrice)
 
-// Sconti 
+// OUTPUT
 
-
+document.getElementById('total-price').innerHTML = userPrice;
